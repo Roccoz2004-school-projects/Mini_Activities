@@ -30,13 +30,18 @@ public class SortTest {
     }
 
     public static void getMedian(int[] elements) {
+        insertionSort(elements);
 
     }
 
     public static void main(String[] args) {
         int[] arr1 = {3, 86, -20, 14, 40};
-        System.out.println(Arrays.toString(arr1));
+        System.out.println("Original: " + Arrays.toString(arr1));
         selectionSort(arr1);
-        System.out.println(Arrays.toString(arr1));
+        System.out.println("Selection Descending: " + Arrays.toString(arr1));
+        insertionSort(arr1);
+        System.out.println("Insertion Ascending: " + Arrays.toString(arr1));
+        getMedian(arr1);
+        System.out.println("Median Value " + Arrays.toString(arr1));
     }
 }
