@@ -29,9 +29,18 @@ public class SortTest {
         }
     }
 
-    public static void getMedian(int[] elements) {
+    public static int getMedian(int[] elements) {
         insertionSort(elements);
-
+        double temp;
+        if (elements.length % 2 == 0) {
+            temp = ((elements.length + 1) / 2.0) - 1;
+            int lower = (int) (temp - 0.5);
+            int upper = (int) (temp + 0.5);
+            temp = (elements[lower] + elements[upper]) / 2;
+        } else {
+            temp = elements[elements.length / 2];
+        }
+        return (int) temp;
     }
 
     public static void main(String[] args) {
@@ -41,7 +50,6 @@ public class SortTest {
         System.out.println("Selection Descending: " + Arrays.toString(arr1));
         insertionSort(arr1);
         System.out.println("Insertion Ascending: " + Arrays.toString(arr1));
-        getMedian(arr1);
-        System.out.println("Median Value " + Arrays.toString(arr1));
+        System.out.println("Median Value: " + getMedian(arr1));
     }
 }
